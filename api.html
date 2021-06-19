@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<title>machine learning API</title>
+<style>
+input{
+    border: 2px solid red;
+    border-radius: 4px;}
+button{text-align:center;}
+mydiv{ text-align:center;
+        margin-left:400px;
+        
+       }
+body{text-align:center;
+      font-family:apple-system;
+      background-color:grey}
+</style>
+<body>
+<div class="mydiv">
+<h2>Diabetes Prediction</h2>
+<form action="{{ url_for('predict')}}" method=""POST">
+<input type="text"   name="pregnancies" placeholder="pregnancies" required="required" /><br><BR>
+<input type="text"  name="glucose" placeholder="Glucose" required="required" /><br><br>
+<input type="text"  name="bmi" placeholder="BMI" required="required" /><br><br>
+<input type="text" name="age" placeholder="Age" required="required" /><br><BR><br>
+ 
+<button type="submit" class="button" >Predict</button>
+</form>
+<BR>
+<br>
+{{ prediction_text }}
+</div>
